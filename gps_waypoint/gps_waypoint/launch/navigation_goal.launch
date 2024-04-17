@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<!--RUn waypoint for Cartesian coordinate-->
+
+  <node pkg="gps_waypoint" type="navigation_goal" name="navigation_goal" clear_params="true" />
+
+
+</launch>
