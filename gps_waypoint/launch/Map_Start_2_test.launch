@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Run gazebo to simulate robot -->
+    <include file="$(find gps_waypoint)/launch/gazebo_launch_test2.launch"/> 
+
+
+    <!--RUn ekf_localization node. Navsat_transform, and movegroup-->
+  
+   <include file="$(find gps_waypoint)/launch/ekf_navigation.launch"/> 
+  <!-- Run the map server -->
+
+</launch>
