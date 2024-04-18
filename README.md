@@ -110,9 +110,8 @@ source devel/setup.bash
 ```
 roslaunch gps_waypoint ekf_navigation.launch
 
-## Or
-
 Step 3: Launch everything at once
+
 ```
 cd catkin_ws
 ```
