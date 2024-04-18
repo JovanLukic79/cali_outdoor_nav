@@ -1,22 +1,18 @@
-# Scorbot Hardware Interface
+# 'Cali' Outdoor Navigation
 
-This project is a continuation of 'Project Cali' a mobile manipulator designed by students and staff of California State University Los Angeles (CSULA), and the members of the student organization 'American Society of Mechanical Engineers (ASME). Link: https://github.com/ASME-ground-robot/robot_cali. This platform is intended for reasearch, educational purposes, as well as design competitions. If you would like to read more about the overal project feel free to click on the link provided. I took part in development starting in May 2022, where I acted as a research assistant for a graduate level research, where I worked on developing this controller needed to manipulate the 'Scorbot ER III' robotic arm which was used in development of this platform . I then led further development of 'Project Cali' as a 'Project Lead' from September 2022 - May 2023, where I've done further work in navigation.
-
-![Rover_Urc](https://github.com/JovanLukic79/scorbot_control_2/assets/115774118/f26800ed-8741-468d-a514-e1811fa5fde4)
-
-
-This repo describes one of my particular contribution of the overall platform which is to provide a control scheme for the 6-link robotic arm integrated onto the overall platform. ROS's 'MoveIt' package was used to provide the control system, and GUI needed for robotic arm manipulation. ROS version that was used is ROS melodic. With that said, this package provides the code needed to interface ros_control and controllers with any sort of embedded controls. Later I may provide an example of said emedded controls just to demonstrate how this package would communicate with a set of hardware controls to acheive joint articulation. For now, I will just provide this part of the system for anyone who needs it as well as to use as my personal portfolio. This package can also be configured to any general robotic arm, so if you happen to need to interface your hardware controls with ROS's control system, feel free to use this as a template. With that said, a description of this package is provided bellow.
-
-
-![IMG_1666](https://github.com/JovanLukic79/scorbot_control_2/assets/115774118/0d4ebff5-e54c-4485-bf71-09ed5fdbdc6d)
+This project is a continuation of 'Project Cali' a mobile manipulator designed by students and staff of California State University Los Angeles (CSULA), and the members of the student organization 'American Society of Mechanical Engineers (ASME). Link: https://github.com/ASME-ground-robot/robot_cali. This platform is intended for reasearch, educational purposes, as well as design competitions. If you would like to read more about the overal project feel free to click on the link provided. I took part in development starting in May 2022, where I acted as a research assistant for a graduate level research, where I worked on developing this controller needed to manipulate the 'Scorbot ER III' robotic arm which was used in development of this platform . I then led further development of 'Project Cali' as a 'Project Lead' from September 2022 - May 2023, where I've done further work in navigation. 
 
 ## Description
 
-This repo is made up of two packages. The first one is "scorbot_control_2". This package is where I defined my hardware interface for the robotic arm. In addition to that,"scorbot_control_2" consists of the robotic arm simulation pacakge named "gazebo.launch". The second package is "scorbot_moveit_2", was built using "moveit_setup_assistants". This contains "move_group.launch" the main node needed to communicate with the rest of ROS's control system. In addition to movegroup, this package would also provide moveit_rviz.launch file which woutld act as the main GUI needed to control your robotic arm. 
+This repo describes one of my particular contribution of the navigation system intended for outdoor navigation. It uses a GPS odometry in order to perform localizastion. The localizzation algorithim that was used was "ekf_localization", from the "robot_localization" package. A 'sensor fusion' based localization algorithim that is able to perform sensor fusion based localizastion using either IMU, Wheel, and GPS odometry to generate 2D-State estimation [2]. In this build, I configured our localization to use GPS, and IMU. "Navsat_transform" algorithim was also used in order to perform the actual sensor fusion, and to turn the GPS/IMU data into "/odometry/fix" messages in order for "ekf_localization" to subscribe too. I added a simulated world 'cpr_orchard_gazebo' provided by 'Clear Path Robotics', in order to simulate 'Cali' robot in an outdoor agricultrual environment. Lastly, sensor models provided by 'Hector_gazebo_pluggins" were provided to simulate GPS,IMU sensor data [5].
 
+<ins>Dependencies (Install):</ins>
+- 'Project Cali' Repo: https://github.com/ASME-ground-robot/robot_cali
+- 'Robot_Localization': https://github.com/cra-ros-pkg/robot_localization (git clone) or "sudo apt-get insatll ros-melodic-robot-localization"
+- Clear path Robotics 'cpr_orchard_gazebo" simulation world: https://github.com/clearpathrobotics/cpr_gazebo
+  
 ## Demonstration
-![robotic_arm_demo](https://github.com/JovanLukic79/scorbot_control_2/assets/115774118/fde7b4bf-d4aa-48ad-9057-2868b8ec43db)
-
+![Navigation_demo(1)](https://github.com/JovanLukic79/cali_outdoor_nav/assets/115774118/bc0897a1-c8b6-4c73-89e9-f16ed1ac9046)
 
 
 ## Scorbot Hardware Interface (Controller.launch)
@@ -161,3 +157,8 @@ Contributers: jovanlukic792@gmail.com (me)
 ## License
 
 ## Acknowledgments
+[1] https://github.com/ASME-ground-robot/robot_cali
+[2] https://docs.ros.org/en/lunar/api/robot_localization/html/_downloads/robot_localization_ias13_revised.pdf
+[3] http://docs.ros.org/en/melodic/api/robot_localization/html/navsat_transform_node.html
+[4] https://github.com/clearpathrobotics/cpr_gazebo
+[5] http://wiki.ros.org/hector_gazebo_plugins
