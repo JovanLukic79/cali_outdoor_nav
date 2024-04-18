@@ -13,7 +13,8 @@ This repo describes one of my particular contribution of the navigation system i
   
 ## Demonstration
 
-![Navigation_demo(2)](https://github.com/JovanLukic79/cali_outdoor_nav/assets/115774118/bb9d1458-195b-4bdb-89bd-de319d10732b)
+![Navigation_demo(3)](https://github.com/JovanLukic79/cali_outdoor_nav/assets/115774118/fddcbc5d-a26d-4074-b853-151a522ddd3c)
+
 
 ## Scorbot Hardware Interface (Controller.launch)
 ```
