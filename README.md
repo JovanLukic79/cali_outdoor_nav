@@ -139,5 +139,7 @@ Contributers: jovanlukic792@gmail.com (me)
 [2] https://docs.ros.org/en/lunar/api/robot_localization/html/_downloads/robot_localization_ias13_revised.pdf
 
 [3] http://docs.ros.org/en/melodic/api/robot_localization/html/navsat_transform_node.html
+
 [4] https://github.com/clearpathrobotics/cpr_gazebo
+
 [5] http://wiki.ros.org/hector_gazebo_plugins
