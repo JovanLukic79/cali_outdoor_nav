@@ -12,6 +12,8 @@ This repo describes one of my particular contribution of the navigation system i
 - Clear path Robotics 'cpr_orchard_gazebo" simulation world: https://github.com/clearpathrobotics/cpr_gazebo
   
 ## Demonstration
+<ins>Desclaimer</ins>
+I needed to lower the fps, and cut the recorded demonstrations to 30 seconds in order to fit this GIF into this repo.
 
 ![Navigation_demo(3)](https://github.com/JovanLukic79/cali_outdoor_nav/assets/115774118/fddcbc5d-a26d-4074-b853-151a522ddd3c)
 
