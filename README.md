@@ -12,8 +12,8 @@ This repo describes one of my particular contribution of the navigation system i
 - Clear path Robotics 'cpr_orchard_gazebo" simulation world: https://github.com/clearpathrobotics/cpr_gazebo
   
 ## Demonstration
-![Navigation_demo(1)](https://github.com/JovanLukic79/cali_outdoor_nav/assets/115774118/bc0897a1-c8b6-4c73-89e9-f16ed1ac9046)
 
+![Navigation_demo(2)](https://github.com/JovanLukic79/cali_outdoor_nav/assets/115774118/bb9d1458-195b-4bdb-89bd-de319d10732b)
 
 ## Scorbot Hardware Interface (Controller.launch)
 ```
