@@ -101,6 +101,7 @@ source devel/setup.bash
 roslaunch gps_waypoint gazebo.launch
 ```
 Step 2: Launch navigation 
+
 ```
 cd catkin_ws
 ```
@@ -109,6 +110,8 @@ source devel/setup.bash
 ```
 ```
 roslaunch gps_waypoint ekf_navigation.launch
+```
+## Or
 
 Step 3: Launch everything at once
 
