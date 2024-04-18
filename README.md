@@ -81,7 +81,7 @@ This file laucnhes both "gazebo.launch" and "ekf_navigation.launch" to launch ev
 cd catkin_ws/src
 ```
 ```
-git clone https://github.com/JovanLukic79/scorbot_control_2
+git clone https://github.com/JovanLukic79/scorbot_control_2](https://github.com/JovanLukic79/cali_outdoor_nav
 ```
 ```
 cd ..
@@ -90,7 +90,7 @@ cd ..
 catkin_make
 ```
 ### Executing program
-Step 1: Launch controllers
+Step 1: Launch Simulation
 ```
 cd catkin_ws
 ```
@@ -98,19 +98,9 @@ cd catkin_ws
 source devel/setup.bash
 ```
 ```
-roslaunch scorbot_control_2 controller.launch is_sim:=true
+roslaunch gps_waypoint gazebo.launch
 ```
-Step 2: Launch move group
-```
-cd catkin_ws
-```
-```
-source devel/setup.bash
-```
-```
-roslaunch scorbot_moveit_2 move_group.launch
-```
-Step 3: Launch Simulation
+Step 2: Launch navigation 
 ```
 cd catkin_ws
 ```
@@ -118,9 +108,11 @@ cd catkin_ws
 source devel/setup.bash
 ```
 ```
-roslaunch scorbot_control_2 gazebo.launch
-```
-Step 3: Launch RVIZ GUI
+roslaunch gps_waypoint ekf_navigation.launch
+
+## Or
+
+Step 3: Launch everything at once
 ```
 cd catkin_ws
 ```
@@ -128,9 +120,9 @@ cd catkin_ws
 source devel/setup.bash
 ```
 ```
-roslaunch scorbot_moveit_2 moveit_rviz.launch
+roslaunch gps_waypoint Map_start_2_test.launch
 ```
-top left corner: File > open config > catkin_ws > src > scorbot_control_2 > scorbot_moveit_2 > launch > moveit.rviz
+
 ## Help
 Feel free to contact me: jovanlukic792@gmail.com
 
